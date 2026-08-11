@@ -362,7 +362,7 @@
 
         window.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
-            const saved = localStorage.getItem('dx_custom_config');
+            const saved = localStorage.getItem('dx_custom_config_kenchiku');
             if (saved) USER_CONFIG = { ...USER_CONFIG, ...JSON.parse(saved) };
             
             document.getElementById('cfg-access-key').value = USER_CONFIG.accessKey;
@@ -497,7 +497,7 @@
         function saveConfigurations() {
             USER_CONFIG.accessKey = document.getElementById('cfg-access-key').value.trim();
             USER_CONFIG.hourlyWage = parseInt(document.getElementById('cfg-hourly-wage').value) || 2500;
-            localStorage.setItem('dx_custom_config', JSON.stringify(USER_CONFIG));
+            localStorage.setItem('dx_custom_config_kenchiku', JSON.stringify(USER_CONFIG));
             showToast("連携設定をローカルに保存しました", "save");
             calculateROI(); 
         }
